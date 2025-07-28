@@ -1,0 +1,26 @@
+DATA:
+  DATASET: imagenet
+MODEL:
+  TYPE: vit_moge
+  NAME: vit_moge_small_patch16_224_32expert_top1_4gpu_last2_C4_lr[default]-GSLW[0.005]-S[10-0.5-0.3]
+  VIT_MOGE:
+    EMBED_DIM: 512
+    DEPTH: 8
+    NUM_HEADS: 8
+    MODE: 'Last2'
+    NUM_LOCAL_EXPERTS: 8
+    TOP_VALUE: 1
+    CAPACITY_FACTOR: 4.0
+    MOE_DROP: 0.0
+    AUX_LOSS_WEIGHT: 0.01
+
+    IS_GROUP_SPARSITY_LOSS: True
+    GS_LOSS_WEIGHT: 0.005
+    GS_WINDOW_SIZE: 3
+    GS_STRIDE: 1
+    GS_SIGMA_INIT: 10.0
+    GS_SIGMA_FINAL: 0.5
+    GS_SIGMA_POWER: 0.3
+TRAIN:
+  EPOCHS: 150
+  WARMUP_EPOCHS: 15

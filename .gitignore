@@ -1,0 +1,15 @@
+__pycache__
+
+wandb/
+
+# Compiled and optimized Python code and libraries
+__pycache__/
+*.py[cod]
+
+# Temporary editor files
+*~
+[._]*.sw[nop]
+
+# Temporary macOS files
+.DS_Store
+

@@ -1,0 +1,23 @@
+DATA:
+  DATASET: imagenet
+  IMG_SIZE: 192
+MODEL:
+  TYPE: swin_moe
+  NAME: swin_moe_tiny_patch4_window12_192_32expert_4gpu_last2_C4
+  DROP_PATH_RATE: 0.2
+  SWIN_MOE:
+    EMBED_DIM: 96
+    DEPTHS: [ 2, 2, 6, 2 ]
+    NUM_HEADS: [ 3, 6, 12, 24 ]
+    WINDOW_SIZE: 12
+    MLP_FC2_BIAS: False
+    MOE_BLOCKS: [ [ -1 ], [ -1 ], [ 5 ], [ 1 ] ]
+    NUM_LOCAL_EXPERTS: 8
+    TOP_VALUE: 1
+    CAPACITY_FACTOR: 4.0
+    IS_GSHARD_LOSS: False
+    MOE_DROP: 0.1
+    AUX_LOSS_WEIGHT: 0.01
+TRAIN:
+  EPOCHS: 150
+  WARMUP_EPOCHS: 15

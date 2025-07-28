@@ -1,0 +1,13 @@
+apex==0.9.10dev
+numpy==1.21.5
+Pillow==9.3.0
+PyYAML==6.0.1
+scipy==1.7.3
+setuptools==65.6.3
+termcolor==1.1.0
+timm==0.4.12
+torch==1.13.1+cu117
+torchvision==0.14.1+cu117
+tutel==0.3
+typing_extensions==4.4.0
+yacs==0.1.8

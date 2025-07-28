@@ -1,0 +1,17 @@
+DATA:
+  DATASET: imagenet
+  IMG_SIZE: 192
+MODEL:
+  TYPE: swin_moe
+  NAME: swin_moe_tiny_patch4_window12_192_densebaseline
+  DROP_PATH_RATE: 0.2
+  SWIN_MOE:
+    EMBED_DIM: 96
+    DEPTHS: [ 2, 2, 6, 2 ]
+    NUM_HEADS: [ 3, 6, 12, 24 ]
+    WINDOW_SIZE: 12
+    MLP_FC2_BIAS: False
+    MOE_BLOCKS: [ [ -1 ], [ -1 ], [ -1 ], [ -1 ] ]
+TRAIN:
+  EPOCHS: 150
+  WARMUP_EPOCHS: 15

@@ -1,0 +1,13 @@
+DATA:
+  DATASET: imagenet
+MODEL:
+  TYPE: vit_moe
+  NAME: vit_moe_small_patch16_224_densebaseline
+  VIT_MOE:
+    EMBED_DIM: 512
+    DEPTH: 8
+    NUM_HEADS: 8
+    MODE: 'Dense'
+TRAIN:
+  EPOCHS: 150
+  WARMUP_EPOCHS: 15
