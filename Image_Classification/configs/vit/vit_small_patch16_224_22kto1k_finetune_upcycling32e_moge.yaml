@@ -1,0 +1,34 @@
+MODEL:
+  TYPE: vit_upcycle
+  NAME: vit_small_patch16_224_22kto1k_finetune_upcycling32e_last2_lw0.01_C4_moge_gslw4e-5_sigma[10-0.5-0.3]_lr3e-5
+  DROP_PATH_RATE: 0.0
+  VIT_UPCYCLING:
+    PATCH_SIZE: 16
+    EMBED_DIM: 384
+    DEPTH: 12
+    NUM_HEADS: 6
+
+    NUM_LOCAL_EXPERTS: 8
+    TOP_VALUE: 1
+    CAPACITY_FACTOR: 4.0
+    AUX_LOSS_WEIGHT: 0.01
+    MOE_DROP: 0.1
+    MOE_BLOCKS: [9, 11]
+
+    IS_GROUP_SPARSITY_LOSS: True
+    GS_LOSS_WEIGHT: 0.00003
+    GS_MAP_SIZE: (4, 8)
+    GS_WINDOW_SIZE: 3
+    GS_STRIDE: 1
+
+    GS_SIGMA_INIT: 10.0
+    GS_SIGMA_FINAL: 1.0
+    GS_SIGMA_POWER: 0.2
+
+TRAIN:
+  EPOCHS: 30
+  WARMUP_EPOCHS: 5
+  WEIGHT_DECAY: 1e-8
+  BASE_LR: 3e-05
+  WARMUP_LR: 2e-08
+  MIN_LR: 2e-07
